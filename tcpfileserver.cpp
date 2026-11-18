@@ -55,7 +55,7 @@ void TcpFileServer::updataServerProgress()
 {
     QDataStream in(tcpServerConnection);
     in.setVersion(QDataStream::Qt_4_6);
-    if(byteReceived<= sizeof(qint64)*2)
+    if(byteReceived <= sizeof(qint64)*2)
     {
         if((fileNameSize == 0)&&(tcpServerConnection->bytesAvailable() >=sizeof(qint64)*2)){
             in>>totalBytes >>fileNameSize;
